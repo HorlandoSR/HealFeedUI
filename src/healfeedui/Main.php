@@ -42,7 +42,7 @@ class Main extends PluginBase implements Listener{
         return true;
     }
     
-    public function openMyForm($sender, $player){
+    public function openMyForm($sender){
         $api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
         $form = $api->createSimpleForm(function(Player $sender, int $data = null) {
             $result = $data;
@@ -60,7 +60,7 @@ class Main extends PluginBase implements Listener{
                 break;
 
                 case 2:
-                    $player->setFood(20);
+                    $sender->setFood(20);
                     $sender->sendMessage($this->getConfig()->get("MSG-FEED"));
                 break;
 
