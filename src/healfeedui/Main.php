@@ -69,8 +69,8 @@ class Main extends PluginBase implements Listener{
         $form->setTitle($this->getConfig()->get("TITLE-UI"));
         $form->setContent($this->getConfig()->get("CONTENT-UI"));
         $form->addButton("§c§lExit", 0, "textures/ui/cancel");
-        $form->addButton($this->getConfig()->get("BTN-FEED"), 0, "textures/items/feather");
-        $form->addButton($this->getConfig()->get("BTN-HEAL"), 0, "textures/items/book_writable");
+        $form->addButton($this->getConfig()->get("BTN-HEAL"), 0, "textures/items/feather");
+        $form->addButton($this->getConfig()->get("BTN-FEED"), 0, "textures/items/book_writable");
         $form->sendToPlayer($sender);
         return $form;
     }
