@@ -1,0 +1,12 @@
+#Plugin This Create 20 June 2021
+#Real Author HaykalPRO
+#Don't Change This Author
+name: ComunityUI
+author: HaykalPRO
+main: healfeedui\Main
+api: 3.0.0
+version: 1.0.0
+
+commands:
+  hfui:
+    description: §aHealFeed With UI!
