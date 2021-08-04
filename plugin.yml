@@ -1,4 +1,4 @@
-#Plugin This Create 20 June 2021
+#Plugin This Create 4 Agustus 2021
 #Real Author HaykalPRO
 #Don't Change This Author
 name: HealFeedUI
@@ -10,3 +10,4 @@ version: 1.0.0
 commands:
   hfui:
     description: §aHealFeed With UI!
+    permission: use.hfui
