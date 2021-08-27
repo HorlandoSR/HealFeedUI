@@ -31,7 +31,7 @@ class Main extends PluginBase implements Listener{
             case "hfui":
                 if($sender instanceof Player){
                     if($sender->hasPermission("use.hfui")){
-                        $this->openMyForm($sender);
+                        $this->hfui($sender);
                     }
                     return true;
                 }else{
@@ -42,7 +42,7 @@ class Main extends PluginBase implements Listener{
         return true;
     }
     
-    public function openMyForm($sender){
+    public function hfui($player){
         $api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
         $form = $api->createSimpleForm(function(Player $sender, int $data = null) {
             $result = $data;
@@ -51,17 +51,17 @@ class Main extends PluginBase implements Listener{
             }
             switch($result){
                 case 0:
-                    $sender->addTitle("§cGOODBYE", "HealFeedUI");
+                    $player->addTitle("§cGOODBYE", "HealFeedUI");
                 break;
 
                 case 1:
-                    $sender->setHealth(20);
-                    $sender->sendMessage($this->getConfig()->get("MSG-HEAL"));
+                    $player->setHealth(20);
+                    $player->sendMessage($this->getConfig()->get("MSG-HEAL"));
                 break;
 
                 case 2:
-                    $sender->setFood(20);
-                    $sender->sendMessage($this->getConfig()->get("MSG-FEED"));
+                    $player->setFood(20);
+                    $player->sendMessage($this->getConfig()->get("MSG-FEED"));
                 break;
 
             }
@@ -71,7 +71,7 @@ class Main extends PluginBase implements Listener{
         $form->addButton("§c§lExit", 0, "textures/ui/cancel");
         $form->addButton($this->getConfig()->get("BTN-HEAL"), 0, "textures/items/feather");
         $form->addButton($this->getConfig()->get("BTN-FEED"), 0, "textures/items/book_writable");
-        $form->sendToPlayer($sender);
+        $form->sendToPlayer($player);
         return $form;
     }
 }
