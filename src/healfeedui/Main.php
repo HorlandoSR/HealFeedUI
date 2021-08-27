@@ -43,13 +43,12 @@ class Main extends PluginBase implements Listener{
     }
     
     public function hfui($player){
-        $api = $this->getServer()->getPluginManager()->getPlugin("FormAPI");
-        $form = $api->createSimpleForm(function(Player $player, int $data = null) {
+        $form = $this->getServer()->getPluginManager()->getPlugin("FormAPI")->createSimpleForm(function (Player $player, int $data = null){
             $result = $data;
-            if($result == null){
+            if($data == null){
                 return true;
             }
-            switch($result){
+            switch($data){
                 case 0:
                     $player->addTitle("§cGOODBYE", "HealFeedUI");
                 break;
