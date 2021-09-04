@@ -12,6 +12,6 @@ commands:
     description: §aHealFeed With UI!
     permission: use.hfui
 
-permission:
+permissions:
   use.hfui:
-  description: "/hfui"
+    description: "/hfui"
